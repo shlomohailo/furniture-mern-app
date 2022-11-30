@@ -5,11 +5,14 @@ const cors = require('cors');
 require('./DB/db')
 const path = require('path');
 
-const usersRouter = require('../server/routes/users-router')
+const usersRouter = require('../server/routes/users-router');
+const furnitureRouter = require('../server/routes/furniture-router');
+
+
 const passport = require('passport');
 require('./config/passport')(passport);
 const app = express();
-const port = 8000;
+const port = 8080;
 
 app.use(passport.initialize())
 app.use(express.json({ extended: true }));
@@ -17,6 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors())
 
 
+app.use('/api/furniture', furnitureRouter);
 app.use('/api/users', usersRouter);
 
 app.get('/', (req, res) => {
@@ -26,7 +30,10 @@ app.listen(port, () => {
     console.log(process.env.CONNECTION_STRING);
     console.log(`server listen on port: ${port}`);
 })
-//*****************************************************************/
+
+
+
+// *****************************************************************/
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../client/build')));
     app.get('*', (req, res) => {
