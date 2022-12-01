@@ -6,13 +6,16 @@ require('./DB/db')
 const path = require('path');
 
 const usersRouter = require('../server/routes/users-router');
-const furnitureRouter = require('../server/routes/furniture-router');
+const productRouter = require('../server/routes/product-router');
+const ordersRouter = require('../server/routes/orders-router');
+const citiesRouter = require('../server/routes/cities-router');
+const salesRouter = require('../server/routes/sales-router');
 
 
 const passport = require('passport');
 require('./config/passport')(passport);
 const app = express();
-const port = 8080;
+const port = 8000;
 
 app.use(passport.initialize())
 app.use(express.json({ extended: true }));
@@ -20,7 +23,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors())
 
 
-app.use('/api/furniture', furnitureRouter);
+app.use('/api/product', productRouter);
+app.use('/api/orders', ordersRouter);
+app.use('/api/cities', citiesRouter);
+app.use('/api/sales', salesRouter);
 app.use('/api/users', usersRouter);
 
 app.get('/', (req, res) => {
