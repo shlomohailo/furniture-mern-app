@@ -1,25 +1,23 @@
-import logo from './logo.svg';
+import { useEffect, useState } from "react";
+import { getDataCities } from "./service/cities";
 import './App.css';
 
+
 function App() {
+  const [cities, setCities] = useState([]);
+  useEffect(() => {
+    getDataCities().then((res) => setCities(res));
+  }, []);
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        hello
+        
+        {cities}
       </header>
     </div>
   );
 }
 
 export default App;
+
