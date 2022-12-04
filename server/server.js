@@ -15,7 +15,7 @@ const salesRouter = require('../server/routes/sales-router');
 const passport = require('passport');
 require('./config/passport')(passport);
 const app = express();
-const port = 8080;
+const port = 8000;
 
 app.use(passport.initialize())
 app.use(express.json({ extended: true }));
