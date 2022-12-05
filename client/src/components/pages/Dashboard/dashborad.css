@@ -1,0 +1,100 @@
+#body {
+    background-color: beige;
+}
+
+.pieChart {
+    height: 40vh;
+
+
+    background-color: rgba(20, 214, 40, 0.212);
+    box-shadow: 10px 10px rgba(247, 247, 247, 0.493);
+}
+
+.chanSales canvas {
+    width: 50vw !important;
+    height: 50vh !important;
+}
+
+.big {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    background-color: rgba(16, 16, 16, 0);
+}
+
+.small {
+    height: 18vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#verChart {
+    background-color: rgba(209, 209, 209, 0.228);
+}
+
+.circle {
+    width: 125px;
+    height: 125px;
+    border: 5px solid black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    height: 40vh !important;
+}
+
+.status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-style: dotted;
+    border-color: blue;
+    box-shadow: 10px 10px rgba(23, 9, 222, 0.961);
+}
+
+
+
+.doughnutChart {
+    display: flex;
+    flex-direction: row !important;
+    width: 20vw !important;
+    margin-top: 2vh;
+}
+
+.doughnutChart canvas {
+    height: 40vh !important;
+}
+
+
+@media screen and (max-width: 600px) {
+    .CardContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2px;
+    }
+
+    .card {
+        margin-top: 10px;
+    }
+
+    .doughnutChartRow {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .doughnutChart {
+        width: 95% !important;
+    }
+
+    #verChart {
+        height: 27vh !important;
+    }
+
+}
