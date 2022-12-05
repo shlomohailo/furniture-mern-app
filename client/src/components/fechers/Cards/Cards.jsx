@@ -3,13 +3,11 @@ import {
   MDBCard,
   MDBCardBody,
   MDBCardTitle,
- 
   MDBCardImage,
   MDBBtn,
 } from "mdb-react-ui-kit";
 
 export default function Card({ item }) {
-   
   return (
     <MDBCard className="">
       <MDBCardImage
@@ -19,16 +17,16 @@ export default function Card({ item }) {
         style={{ height: "323px" }}
       />
       <MDBCardBody>
-        <MDBCardTitle>
-          {item.map((item) => {
-            if (item.productName === "TV") {
-              return item.productName;
-            }
-          })}
-        </MDBCardTitle>
-      
+        <MDBCardTitle>TV</MDBCardTitle>
+
         <MDBBtn href="#">view full report</MDBBtn>
       </MDBCardBody>
     </MDBCard>
   );
 }
+
+// {item.map((item) => {
+//   if (item.productName === "TV") {
+//     return item.productName;
+//   }
+// })}

@@ -10,14 +10,16 @@ import Table from "../../fechers/table/Table";
 import Card from "../../fechers/Cards/Cards";
 import ChatsSales from "../../fechers/ChartSales/ChartSales";
 import "./dashborad.css";
+import Navbar from "../../fechers/Navbar/Navbar";
 function Dashboard() {
   const { products, orders, sales, cities } = useContext(dataContext);
 
   return (
     <div id="body">
-      <h1>Dashboard</h1>
+      
+      <Navbar/>
 
-      <MDBContainer fluid>
+      <MDBContainer fluid className="mt-2">
         <MDBRow className="lg-mt-5 lg-mb-5 justify-content-center  ">
           <MDBCol
             id="verChart"
@@ -33,33 +35,33 @@ function Dashboard() {
 
       <MDBContainer>
         <MDBRow className=" m-5">
-          <MDBCol className="d-flex flex-column  bg-danger ">
+          <MDBCol className="d-flex flex-column  ">
             <MDBCol className="d-flex flex-row">
-              <MDBCol className="big">
-                <div className="small">
+              <MDBCol className="big ">
+                <div className="small ">
                   <div className="circle">388</div>
                 </div>
               </MDBCol>
               <MDBCol>
                 <div className="small">
-                  <div className="circle">388</div>
+                  <div className="circle">722</div>
                 </div>
               </MDBCol>
             </MDBCol>
             <MDBCol className="d-flex flex-row">
               <MDBCol>
                 <div className="small">
-                  <div className="circle">388</div>
+                  <div className="circle">358</div>
                 </div>
               </MDBCol>
               <MDBCol>
                 <div className="small">
-                  <div className="circle">388</div>
+                  <div className="circle">455</div>
                 </div>
               </MDBCol>
             </MDBCol>
           </MDBCol>
-          <MDBCol className=" justify-content-center d-flex ">
+          <MDBCol id="orders" className=" justify-content-center d-flex ">
             <AreaChart item={cities} />
           </MDBCol>
         </MDBRow>
@@ -70,7 +72,7 @@ function Dashboard() {
           <MDBCol className="cards ">
             <Card item={products} />
           </MDBCol>
-          <MDBCol className=" cards">
+          <MDBCol className="cards">
             <Card item={products} />
           </MDBCol>
           <MDBCol className="cards">
@@ -104,8 +106,8 @@ function Dashboard() {
           </MDBCol>
         </MDBRow>
       </MDBContainer>
-      <MDBContainer>
-        <div className="chanSales">
+      <MDBContainer className="d-flex justify-content-center ">
+        <div id="chanSales">
           <ChatsSales item={sales} />
         </div>
       </MDBContainer>

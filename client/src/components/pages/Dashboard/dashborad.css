@@ -10,9 +10,11 @@
     box-shadow: 10px 10px rgba(247, 247, 247, 0.493);
 }
 
-.chanSales canvas {
+#chanSales {
     width: 50vw !important;
     height: 50vh !important;
+
+
 }
 
 .big {
@@ -25,7 +27,7 @@
 
 .small {
     height: 18vh;
-    background-color: white;
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -96,5 +98,10 @@
     #verChart {
         height: 27vh !important;
     }
+
+    #chanSales {
+        width: 100vw !important;
+    }
+
 
 }
