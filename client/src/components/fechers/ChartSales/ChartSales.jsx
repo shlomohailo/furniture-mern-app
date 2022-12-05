@@ -24,7 +24,7 @@ function ChatsSales({item}) {
         label: "sales by product",
         data: [400, 300, 350, 200, 280,400, 300, 350, 200, 280],
         borderColor: "black",
-        backgroundColor: "white",
+        
       },
     ],
   };
